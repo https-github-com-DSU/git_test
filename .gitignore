@@ -1,6 +1,10 @@
 *.log
+*.json
+*.ini
+*.yaml
 dataset/
 .vscode
 .DS_Store
 __pycache__/
 .ipynb_checkpoints/
+/model
