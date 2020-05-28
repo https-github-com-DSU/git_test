@@ -1,0 +1,16 @@
+md5: bb13b432568197c2ef1ce95c3d240c94
+cmd: python ./data_preprocess.py
+wdir: ..
+deps:
+- md5: 8ae480c08302ece3406e79a6fe232670
+  path: data_preprocess.py
+- md5: a35759d77c0a3dadb4d4253ff87ec430
+  path: dataset/raw/test.csv
+- md5: f3eaeafb90cde88b238ebc8dfd4501c5
+  path: dataset/raw/train.csv
+outs:
+- md5: fc349698560ba68b786ea7cb58d347cf.dir
+  path: dataset/preprocess
+  cache: true
+  metric: false
+  persist: false
