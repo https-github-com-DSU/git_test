@@ -1,0 +1,5 @@
+[core]
+    remote = gcs_dev
+['remote "gcs_dev"']
+    url = gs://dvc_test_dev/for_dsu_course
+    credentialpath = .\dsu-dev.json
