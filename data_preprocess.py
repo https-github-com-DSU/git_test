@@ -12,6 +12,7 @@ test = pd.read_csv("./dataset/raw/test.csv")
 print(test.shape)
 
 Y_train = train["label"]
+print(Y_train[:10])
 
 # Drop 'label' column
 X_train = train.drop(labels=["label"], axis = 1)
@@ -29,7 +30,7 @@ Y_train = to_categorical(Y_train, num_classes = 10)
 
 if not os.path.exists('dataset/preprocess'):
     os.makedirs('dataset/preprocess')
+
 np.save("dataset/preprocess/X_train_processed", X_train)
 np.save("dataset/preprocess/Y_train_processed", Y_train)
 
-# np.load("datasets/X_train_processed.npy")
