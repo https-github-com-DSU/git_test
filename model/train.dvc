@@ -1,0 +1,16 @@
+md5: 9399971cc4e9fca3d6a0eee4c0f8d62a
+cmd: python .\train.py
+wdir: ..
+deps:
+- md5: e7211f80d492a39582fc6b8644372e23
+  path: train.py
+- md5: 654a2ae8a2cc7a808bf2a9bab00c0982
+  path: dataset/preprocess/X_train_processed.npy
+- md5: 561cb8810101fdeae8466e6d308af46b
+  path: dataset/preprocess/Y_train_processed.npy
+outs:
+- md5: 3566950b973613430e6a8d110d2c856b
+  path: model/model.h5
+  cache: true
+  metric: false
+  persist: false
