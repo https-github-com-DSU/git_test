@@ -1,0 +1,16 @@
+md5: c3c5ca4ffbadae4c270b6de946053b81
+cmd: python .\data_split.py
+wdir: ..
+deps:
+- md5: 7571f48e48523e690827b97fd52b8876
+  path: data_split.py
+- md5: 654a2ae8a2cc7a808bf2a9bab00c0982
+  path: dataset/preprocess/trainX_processed.npy
+- md5: 561cb8810101fdeae8466e6d308af46b
+  path: dataset/preprocess/trainY_processed.npy
+outs:
+- md5: b1f0e71ae5eb46f20ea75409a595061d.dir
+  path: dataset/preprocess/split
+  cache: true
+  metric: false
+  persist: false
