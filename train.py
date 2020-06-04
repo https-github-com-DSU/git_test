@@ -7,20 +7,14 @@ from keras.callbacks import ReduceLROnPlateau
 
 from sklearn.model_selection import train_test_split
 import numpy as np
+import sys
+import yaml
 
 
 # read clean files
-'''
-X_train = np.load("dataset/preprocess/split/trainX_processed_split.npy")
-Y_train = np.load("dataset/preprocess/split/trainY_processed_split.npy")
-# X_val = np.load("dataset/preprocess/split/valX_processed_split.npy")
-# Y_val = np.load("dataset/preprocess/split/valY_processed_split.npy")
-'''
-
-X_train = np.load("dataset/augment/split/trainX_aug_split.npy")
-Y_train = np.load("dataset/augment/split/trainY_aug_split.npy")
-# X_val = np.load("dataset/augment/split/valX_aug_split.npy")
-# Y_val = np.load("dataset/augment/split/valY_aug_split.npy")
+trainX_path, trainY_path = sys.argv[1], sys.argv[2]
+X_train = np.load(trainX_path)
+Y_train = np.load(trainY_path)
 print(X_train.shape)
 
 # Set the CNN model
@@ -45,8 +39,11 @@ model.add(Dense(256, activation="relu"))
 model.add(Dropout(0.5))
 model.add(Dense(10, activation="softmax"))
 
+with open('params.yaml') as f:
+    params = yaml.load(f, Loader=yaml.SafeLoader)
+
 # Define the optimizer
-optimizer = RMSprop(lr=0.001, rho=0.9, epsilon=1e-08, decay=0.0)
+optimizer = RMSprop(lr=params['optimizer']['lr'], rho=0.9, epsilon=1e-08, decay=0.0)
 
 # Compile the model
 model.compile(optimizer=optimizer,
@@ -58,8 +55,10 @@ learning_rate_reduction = ReduceLROnPlateau(monitor='val_accuracy',
                                             verbose=1,
                                             factor=0.5,
                                             min_lr=0.00001)
-epochs = 1  # Turn epochs to 30 to get 0.9967 accuracy
-batch_size = 86
+
+
+epochs = params['train']['epochs']  # Turn epochs to 30 to get 0.9967 accuracy
+batch_size = params['train']['batch_size']
 
 # Set the random seed
 random_seed = 2
@@ -71,4 +70,3 @@ history = model.fit(X_train, Y_train, batch_size=batch_size,
                     epochs=epochs, verbose=2)
 
 model.save('./model/model.h5')
-
