@@ -1,11 +1,12 @@
 import os
 import numpy as np
-
+import sys
 from keras.preprocessing.image import ImageDataGenerator
 
+trainX_path, trainY_path = sys.argv[1], sys.argv[2]
 # read clean files
-trainX = np.load("dataset/preprocess/trainX_processed.npy")
-trainY = np.load("dataset/preprocess/trainY_processed.npy")
+trainX = np.load(trainX_path)
+trainY = np.load(trainY_path)
 print(trainX.shape)
 
 # define generator for augmentation & init

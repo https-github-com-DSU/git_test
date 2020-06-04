@@ -1,14 +1,14 @@
-md5: 26cb17934a06c1661105eeb9f08a01d2
-cmd: python .\data_split.py
+md5: 4a7865eafd987072b91a40d5a06b1ac6
+cmd: python .\data_split.py .\dataset\preprocess\origin\trainX_processed.npy .\dataset\preprocess\origin\trainY_processed.npy
 wdir: ..
 deps:
-- md5: dab79f713cfcc33c09cee3e254c9b392
+- md5: 517f08c1d146b21178dc9b0859d91aad
   path: data_split.py
-- md5: b4aa61e1c3999187379c134e10519b9e.dir
-  path: dataset/augment/origin
+- md5: 8f4d8b7328f3d48873aab7cce1e281b1.dir
+  path: dataset/preprocess/origin
 outs:
-- md5: 70948f25d9b471e7912961f34130e78d.dir
-  path: dataset/augment/split
+- md5: 01e402f17802858bd52482bcf8b038bd.dir
+  path: dataset/preprocess/split
   cache: true
   metric: false
   persist: false

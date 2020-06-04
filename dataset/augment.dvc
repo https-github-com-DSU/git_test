@@ -1,13 +1,14 @@
-md5: 6608eb6f3393d9e57cb96232f72fe32e
-cmd: python .\data_augmentation.py
+md5: acde58c994c22f43748519e4e5005a7c
+cmd: python .\data_augmentation.py .\dataset\preprocess\origin\trainX_processed.npy
+  .\dataset\preprocess\origin\trainY_processed.npy
 wdir: ..
 deps:
-- md5: 8d943b6b06ebbec29f46eb98b8b13ed3
+- md5: 01a7d1541755522641fddfe10580c46c
   path: data_augmentation.py
-- md5: 8c8e9348ca90d3ef964c1abadd0f3e78.dir
+- md5: 8f4d8b7328f3d48873aab7cce1e281b1.dir
   path: dataset/preprocess/origin
 outs:
-- md5: b4aa61e1c3999187379c134e10519b9e.dir
+- md5: 46a4013554717c16c6993fd8be873851.dir
   path: dataset/augment/origin
   cache: true
   metric: false
