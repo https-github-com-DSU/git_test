@@ -10,11 +10,18 @@ import numpy as np
 
 
 # read clean files
+'''
 X_train = np.load("dataset/preprocess/split/trainX_processed_split.npy")
 Y_train = np.load("dataset/preprocess/split/trainY_processed_split.npy")
-print(X_train.shape)
 # X_val = np.load("dataset/preprocess/split/valX_processed_split.npy")
 # Y_val = np.load("dataset/preprocess/split/valY_processed_split.npy")
+'''
+
+X_train = np.load("dataset/augment/split/trainX_aug_split.npy")
+Y_train = np.load("dataset/augment/split/trainY_aug_split.npy")
+# X_val = np.load("dataset/augment/split/valX_aug_split.npy")
+# Y_val = np.load("dataset/augment/split/valY_aug_split.npy")
+print(X_train.shape)
 
 # Set the CNN model
 model = Sequential()

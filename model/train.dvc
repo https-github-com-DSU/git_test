@@ -1,13 +1,13 @@
-md5: 9731b0f04b813b24f93e62e87fff46a0
+md5: 87cf0fad705a4e32fe7d52144f9566a4
 cmd: python .\train.py
 wdir: ..
 deps:
-- md5: d6ef8a9f72981a7da39e711da6d594d3
+- md5: d65d2ad70e86d7d9858adc11d570fc05
   path: train.py
-- md5: b1f0e71ae5eb46f20ea75409a595061d.dir
-  path: dataset/preprocess/split
+- md5: 70948f25d9b471e7912961f34130e78d.dir
+  path: dataset/augment/split
 outs:
-- md5: 394873b9ce150c48ede707d758215e40
+- md5: ee29ce25ef94a6cd70640a7b15cc827b
   path: model/model.h5
   cache: true
   metric: false
