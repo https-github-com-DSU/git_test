@@ -1,16 +1,16 @@
-md5: 2aefd3be408343afdecd823a922061d2
+md5: b2df74c600cfc44c08e762079a3a6272
 cmd: python .\evaluate.py
 wdir: ..
 deps:
-- md5: 312e6cc21a4ab467d75426ae911dd9fe
+- md5: f8df916a2e5316810a52385fc0026dce
   path: evaluate.py
 - md5: b1f0e71ae5eb46f20ea75409a595061d.dir
   path: dataset/preprocess/split
 - md5: 394873b9ce150c48ede707d758215e40
   path: model/model.h5
 outs:
-- md5: a8525c371f83b1d5df5319055c1dc5d4
-  path: model/model_cm.png
+- md5: 171bb128b38ea031c852a061e2c2c4d0
+  path: model/model_evl.metric
   cache: true
-  metric: false
+  metric: true
   persist: false

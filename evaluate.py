@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import itertools
 import numpy as np
 from keras.models import load_model
-
+import yaml
 
 # Look at confusion matrix
 
@@ -50,6 +50,12 @@ Y_pred_classes = np.argmax(Y_pred, axis=1)
 # Convert validation observations to one hot vectors
 Y_true = np.argmax(Y_val, axis=1)
 # compute the confusion matrix
+metrics = {
+    'accuracy': float(sum(Y_pred_classes==Y_true)/len(Y_true))
+}
+with open('model/model_evl.metric','w') as f:
+    yaml.dump(metrics, f)
+
 confusion_mtx = confusion_matrix(Y_true, Y_pred_classes)
 # plot the confusion matrix
 plot_confusion_matrix(confusion_mtx, classes=range(10))
