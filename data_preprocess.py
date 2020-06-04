@@ -30,9 +30,9 @@ test = test.values.reshape(-1,28,28,1)
 Y_train = to_categorical(Y_train, num_classes = 10)
 
 
-if not os.path.exists('dataset/preprocess'):
-    os.makedirs('dataset/preprocess')
+if not os.path.exists('dataset/preprocess/origin'):
+    os.makedirs('dataset/preprocess/origin')
 
-np.save("dataset/preprocess/trainX_processed", X_train)
-np.save("dataset/preprocess/trainY_processed", Y_train)
+np.save("dataset/preprocess/origin/trainX_processed", X_train)
+np.save("dataset/preprocess/origin/trainY_processed", Y_train)
 

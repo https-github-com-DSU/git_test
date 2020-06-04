@@ -49,10 +49,10 @@ def gen_aug_img(x, y):
     return x_aug, y_aug
 
 
-if not os.path.exists('dataset/augment'):
-    os.makedirs('dataset/augment')
+if not os.path.exists('dataset/augment/origin'):
+    os.makedirs('dataset/augment/origin')
 
 trainX_aug, trainY_aug = gen_aug_img(trainX, trainY)
-np.save("dataset/augment/trainX_aug", trainX_aug)
-np.save("dataset/augment/trainY_aug", trainY_aug)
+np.save("dataset/augment/origin/trainX_aug", trainX_aug)
+np.save("dataset/augment/origin/trainY_aug", trainY_aug)
 

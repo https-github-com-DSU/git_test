@@ -1,19 +1,14 @@
-md5: 0cba0c1619e1240cfe6cdd1783be0020
+md5: 6608eb6f3393d9e57cb96232f72fe32e
 cmd: python .\data_augmentation.py
 wdir: ..
 deps:
-- md5: 49ac5a054af825a948fc4caa117d3ca4
+- md5: 8d943b6b06ebbec29f46eb98b8b13ed3
   path: data_augmentation.py
 - md5: 8c8e9348ca90d3ef964c1abadd0f3e78.dir
-  path: dataset/preprocess
+  path: dataset/preprocess/origin
 outs:
-- md5: 4cffb75b061cdc128542c982d6e4f6c9
-  path: dataset/augment/trainX_aug.npy
-  cache: true
-  metric: false
-  persist: false
-- md5: 561cb8810101fdeae8466e6d308af46b
-  path: dataset/augment/trainY_aug.npy
+- md5: b4aa61e1c3999187379c134e10519b9e.dir
+  path: dataset/augment/origin
   cache: true
   metric: false
   persist: false
