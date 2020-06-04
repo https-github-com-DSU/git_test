@@ -14,7 +14,7 @@ X_train = np.load("dataset/preprocess/split/trainX_processed_split.npy")
 Y_train = np.load("dataset/preprocess/split/trainY_processed_split.npy")
 print(X_train.shape)
 # X_val = np.load("dataset/preprocess/split/valX_processed_split.npy")
-# Y_val = np.load("dataset/preprocess/split/valX_processed_split.npy")
+# Y_val = np.load("dataset/preprocess/split/valY_processed_split.npy")
 
 # Set the CNN model
 model = Sequential()
