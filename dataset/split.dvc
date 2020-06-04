@@ -1,14 +1,14 @@
-md5: a81f358629e5896c721ddda1d6a03e83
+md5: 26cb17934a06c1661105eeb9f08a01d2
 cmd: python .\data_split.py
 wdir: ..
 deps:
-- md5: 7571f48e48523e690827b97fd52b8876
+- md5: dab79f713cfcc33c09cee3e254c9b392
   path: data_split.py
-- md5: 8c8e9348ca90d3ef964c1abadd0f3e78.dir
-  path: dataset/preprocess/origin
+- md5: b4aa61e1c3999187379c134e10519b9e.dir
+  path: dataset/augment/origin
 outs:
-- md5: b1f0e71ae5eb46f20ea75409a595061d.dir
-  path: dataset/preprocess/split
+- md5: 70948f25d9b471e7912961f34130e78d.dir
+  path: dataset/augment/split
   cache: true
   metric: false
   persist: false
