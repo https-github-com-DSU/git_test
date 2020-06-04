@@ -4,9 +4,9 @@ import numpy as np
 from keras.preprocessing.image import ImageDataGenerator
 
 # read clean files
-X_train = np.load("dataset/preprocess/X_train_processed.npy")
-Y_train = np.load("dataset/preprocess/Y_train_processed.npy")
-print(X_train.shape)
+trainX = np.load("dataset/preprocess/trainX_processed.npy")
+trainY = np.load("dataset/preprocess/trainY_processed.npy")
+print(trainX.shape)
 
 # define generator for augmentation & init
 datagen = ImageDataGenerator(
@@ -25,25 +25,34 @@ datagen = ImageDataGenerator(
     horizontal_flip=False,  # randomly flip images
     vertical_flip=False)  # randomly flip images
 
-datagen.fit(X_train)
 
 # manually generate new images
-trainX_aug = []
-trainY_aug = []
-generate_amount = len(X_train)
-counter = 0
-for bx, by in datagen.flow(X_train, Y_train, batch_size=1, shuffle=False):
-    counter += 1
-    if counter > generate_amount:
-        break
+def gen_aug_img(x, y):
+    datagen.fit(x)
+    x_aug = []
+    y_aug = []
+    generate_amount = len(x)
+    counter = 0
+    for bx, by in datagen.flow(x, y, batch_size=1, shuffle=False):
+        counter += 1
+        if counter > generate_amount:
+            break
 
-    trainX_aug.append(bx)
-    trainY_aug.append(by)
+        x_aug.append(bx)
+        y_aug.append(by)
 
-trainX_aug = np.concatenate(trainX_aug, axis=0)
-print(trainX_aug.shape)
-trainY_aug = np.vstack(trainY_aug)
-print(trainY_aug.shape)
+    x_aug = np.concatenate(x_aug, axis=0)
+    print(x_aug.shape)
+    y_aug = np.vstack(y_aug)
+    print(y_aug.shape)
 
-np.save("dataset/preprocess/X_train_aug", trainX_aug)
-np.save("dataset/preprocess/Y_train_aug", trainY_aug)
+    return x_aug, y_aug
+
+
+if not os.path.exists('dataset/augment'):
+    os.makedirs('dataset/augment')
+
+trainX_aug, trainY_aug = gen_aug_img(trainX, trainY)
+np.save("dataset/augment/trainX_aug", trainX_aug)
+np.save("dataset/augment/trainY_aug", trainY_aug)
+
