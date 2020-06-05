@@ -1,0 +1,14 @@
+md5: b662f168767e7eb0b895c02396e6f020
+cmd: python .\data_split.py .\dataset\augment\origin\trainX_aug.npy .\dataset\augment\origin\trainY_aug.npy
+wdir: ..
+deps:
+- md5: 517f08c1d146b21178dc9b0859d91aad
+  path: data_split.py
+- md5: 46a4013554717c16c6993fd8be873851.dir
+  path: dataset/augment/origin
+outs:
+- md5: a9a6e50e394bc2fd222b49f2156a53f6.dir
+  path: dataset/augment/split
+  cache: true
+  metric: false
+  persist: false
