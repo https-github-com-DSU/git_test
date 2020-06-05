@@ -1,0 +1,9 @@
+data_aug: false
+
+optimizer:
+  lr: 0.001
+
+train:
+  epochs: 1
+  batch_size: 86
+

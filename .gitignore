@@ -1,7 +1,6 @@
 *.log
 *.json
 *.ini
-*.yaml
 dataset/
 .vscode
 .DS_Store
