@@ -1,11 +1,11 @@
-md5: 4f7b68394576ffd7a3c0a6fcaa52302a
-cmd: python .\train.py .\dataset\preprocess\split\trainX_processed.npy .\dataset\preprocess\split\trainY_processed.npy
+md5: b980047ec6fc7ce8e3402b74541fd1fa
+cmd: python .\train.py .\dataset\augment\split\trainX_aug.npy .\dataset\augment\split\trainY_aug.npy
 wdir: ..
 deps:
-- md5: d419f32845d644821564b34fa8f015ed
+- md5: dd08ed6268819c759bd40912e2d71238
   path: train.py
-- md5: 01e402f17802858bd52482bcf8b038bd.dir
-  path: dataset/preprocess/split
+- md5: a9a6e50e394bc2fd222b49f2156a53f6.dir
+  path: dataset/augment/split
 - path: params.yaml
   params:
     optimizer:
@@ -14,7 +14,7 @@ deps:
       epochs: 1
       batch_size: 86
 outs:
-- md5: 174cedabc08e26235b75045bfc535007
+- md5: 872267a7a627b6994953e2440d08e072
   path: model/model.h5
   cache: true
   metric: false
