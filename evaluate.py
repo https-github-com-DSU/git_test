@@ -4,7 +4,7 @@ import itertools
 import numpy as np
 from keras.models import load_model
 import yaml
-
+import sys
 # Look at confusion matrix
 
 
@@ -38,9 +38,11 @@ def plot_confusion_matrix(cm, classes,
     plt.savefig('model/model_cm.png', bbox_inches='tight')
 
 
-model = load_model('model/model.h5')
-X_val = np.load("dataset/preprocess/split/valX_processed_split.npy")
-Y_val = np.load("dataset/preprocess/split/valY_processed_split.npy")
+model_path, valX_path, valY_path = sys.argv[1], sys.argv[2], sys.argv[3]
+
+model = load_model(model_path)
+X_val = np.load(valX_path)
+Y_val = np.load(valY_path)
 print(X_val.shape, Y_val.shape)
 
 # Predict the values from the validation dataset

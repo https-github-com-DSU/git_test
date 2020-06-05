@@ -1,15 +1,16 @@
-md5: 8ce0b184b0f8beb46364ce39db0fe832
-cmd: python .\evaluate.py
+md5: 446dd872c8c7aecb3cda796334295f4a
+cmd: python .\evaluate.py .\model\model.h5 .\dataset\preprocess\split\valX_processed.npy
+  .\dataset\preprocess\split\valY_processed.npy
 wdir: ..
 deps:
-- md5: f8df916a2e5316810a52385fc0026dce
+- md5: 39d30c72b59d13dc023d5b987fcac452
   path: evaluate.py
-- md5: b1f0e71ae5eb46f20ea75409a595061d.dir
+- md5: 01e402f17802858bd52482bcf8b038bd.dir
   path: dataset/preprocess/split
-- md5: ee29ce25ef94a6cd70640a7b15cc827b
+- md5: 174cedabc08e26235b75045bfc535007
   path: model/model.h5
 outs:
-- md5: abbbc2bbd4e0b1b386dad63826a1f3db
+- md5: 2c2972912bccfbd2d3b4b9b39dd6174c
   path: model/model_evl.metric
   cache: true
   metric: true
